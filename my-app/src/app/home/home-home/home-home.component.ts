@@ -20,8 +20,9 @@ export class HomeHomeComponent implements OnInit {
   employerName = 'Tradelot';
   jobTitle = 'Banker';
   employmentDates = 'January 2014 - Present';
-
+  
   constructor() { }
+
   ngOnInit(): void {
   }
 
