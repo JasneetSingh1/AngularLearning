@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   honorifics = ['Dr.', 'Mr.', 'Mrs.', 'Ms.'];
-  signupForm: FormGroup;
+  signupForm!: FormGroup;
   forbiddenUsernames = ['john.doe', 'jane.doe'];
 
   constructor(private formBuilder: FormBuilder) {}
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     this.signupForm = new FormGroup({
       'userData': new FormGroup({
         'username': new FormControl(null, [Validators.required, this.forbiddenNames.bind(this)]),
-        'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails)
+        // 'email': new FormControl(null, [Validators.required, Validators.email], this.forbiddenEmails)
       }),
       'honorific': new FormControl('Mrs.'),
       'interests': new FormArray([])
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
     if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
       return {'nameIsForbidden': true};
     }
-    return null;
+    return {'nameIsForbidden': true};
   }
 
   forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
