@@ -19,6 +19,11 @@ export class ServicesHomeComponent implements OnInit {
       "category": "reports"
     },
     {
+      "type": 'Provide analysis of customer spending trends',
+      "years": 5,
+      "category": "reports"
+    },
+    {
       "type": 'Open new checking and/or saving accounts',
       "years": 5,
       "category": "financial_accounts"
